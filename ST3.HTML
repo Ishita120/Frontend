@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+</head>
+<body id="main">
+<div id="heading"> Details Form<div>
+<hr>
+
+	<center>
+		<table >
+			<th>
+				<tr>
+					<th> Name</th>
+					<td><input type="text" name="fname" id="fname"></td>
+				</tr>
+			</th>
+			<tbody>
+				<tr>
+					<th>Mob No.</th>
+					<td><input type="text" name="number" id="number"></td>
+				</tr>
+				<tr>
+					<th>Email</th>
+					<td><input type="text" name="email" id="email"></td>
+				</tr>
+                <tr>
+                </tr>
+					 <tr>
+                </tr> <tr>
+                </tr> <tr>
+                </tr> <tr>
+                </tr> <tr>
+                </tr> <tr>
+                </tr>
+				<tr id="b1"><td></td>
+					<td><input type="button" class="button" id="b1" value="SUBMIT" onclick="AddRow()"></td>
+				</tr>
+			</tbody>
+		</table>
+        
+        <hr>
+
+		<table  id="new">
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Mob No.</th>
+					<th>Email ID</th>
+				</tr>
+			</thead>
+		</table>
+	</center>
+	
+	<script>
+		
+		var l1 = [];
+		var l2 = [];
+		var l3 = [];
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+            
+		
+			
+			var AddRown = document.getElementById('new');
+			var NewRow = AddRown.insertRow(n);
+
+			// l1[x] = document.getElementById("fname").value;
+			// l2[x] = document.getElementById("number").value;
+			// l3[x] = document.getElementById("email").value;
+            l1[x] = document.getElementById("fname").value;
+			l2[x] = document.getElementById("number").value;
+			l3[x] = document.getElementById("email").value;
+			if(l1[x]||l2[x]||l3[x]!="")
+			{
+		
+			var c1 = NewRow.insertCell(0);
+			var c2 = NewRow.insertCell(1);
+			var c3 = NewRow.insertCell(2);
+
+			c1.innerHTML = l1[x];
+			c2.innerHTML = l2[x];
+			c3.innerHTML = l3[x];
+
+			n++;
+			x++;
+			}
+			// else if(l2[x]!=0<=9)
+			// {
+			// 	alert("Enter your Mobile number correctly");
+			// }
+		   else{
+			   alert("Form must be filled");
+		   }
+		   }
+		
+
+	</script>
+</body>
+</html>
